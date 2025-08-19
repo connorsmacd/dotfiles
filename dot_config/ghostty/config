@@ -1,0 +1,2 @@
+keybind = page_down=scroll_page_lines:5
+keybind = page_up=scroll_page_lines:-5
