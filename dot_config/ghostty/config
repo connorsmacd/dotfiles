@@ -1,2 +1,19 @@
+keybind = ctrl+j>h=goto_split:left
+keybind = ctrl+j>j=goto_split:down
+keybind = ctrl+j>k=goto_split:up
+keybind = ctrl+j>l=goto_split:right
+
+keybind = ctrl+j>shift+h=new_split:left
+keybind = ctrl+j>shift+j=new_split:down
+keybind = ctrl+j>shift+k=new_split:up
+keybind = ctrl+j>shift+l=new_split:right
+
+keybind = ctrl+j>t=new_tab
+
+keybind = ctrl+j>x=close_tab
+keybind = ctrl+j>q=close_surface
+
 keybind = page_down=scroll_page_lines:5
 keybind = page_up=scroll_page_lines:-5
+
+theme = dark:catppuccin-frappe,light:catppuccin-latte
