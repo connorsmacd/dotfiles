@@ -1,19 +1,74 @@
-keybind = ctrl+j>h=goto_split:left
-keybind = ctrl+j>j=goto_split:down
-keybind = ctrl+j>k=goto_split:up
-keybind = ctrl+j>l=goto_split:right
+command = /opt/homebrew/bin/fish
 
-keybind = ctrl+j>shift+h=new_split:left
-keybind = ctrl+j>shift+j=new_split:down
-keybind = ctrl+j>shift+k=new_split:up
-keybind = ctrl+j>shift+l=new_split:right
+shell-integration = fish
 
-keybind = ctrl+j>t=new_tab
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>j=goto_split:down
+keybind = ctrl+space>k=goto_split:up
+keybind = ctrl+space>l=goto_split:right
 
-keybind = ctrl+j>x=close_tab
-keybind = ctrl+j>q=close_surface
+keybind = ctrl+space>shift+h=new_split:left
+keybind = ctrl+space>shift+j=new_split:down
+keybind = ctrl+space>shift+k=new_split:up
+keybind = ctrl+space>shift+l=new_split:right
 
-keybind = page_down=scroll_page_lines:5
-keybind = page_up=scroll_page_lines:-5
+keybind = ctrl+space>equal=equalize_splits
 
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+keybind = ctrl+space>t=new_tab
+
+keybind = ctrl+space>x=close_tab
+keybind = ctrl+space>q=close_surface
+
+keybind = ctrl+space>s=write_scrollback_file:open
+
+# Vim-mode keybindings for Ghostty.
+#
+# Note: We're missing a number of actions to produce a better vim experience.
+# This is what is possible today! But we plan on adding more actions to make
+# this even better in the future.
+
+# Entry point
+keybind = ctrl+space>v=activate_key_table:vim
+
+# Key table definition
+keybind = vim/
+
+# Line movement
+keybind = vim/j=scroll_page_lines:1
+keybind = vim/k=scroll_page_lines:-1
+
+# Page movement
+keybind = vim/ctrl+d=scroll_page_down
+keybind = vim/ctrl+u=scroll_page_up
+keybind = vim/ctrl+f=scroll_page_down
+keybind = vim/ctrl+b=scroll_page_up
+keybind = vim/shift+j=scroll_page_down
+keybind = vim/shift+k=scroll_page_up
+
+# Jump to top/bottom
+keybind = vim/g>g=scroll_to_top
+keybind = vim/shift+g=scroll_to_bottom
+
+# Search (if you want vim-style search entry)
+keybind = vim/slash=start_search
+keybind = vim/n=navigate_search:next
+
+# Copy mode / selection
+# Note we're missing a lot of actions here to make this more full featured.
+keybind = vim/v=copy_to_clipboard
+keybind = vim/y=copy_to_clipboard
+
+# Command Palette
+keybind = vim/shift+semicolon=toggle_command_palette
+
+# Exit
+keybind = vim/escape=deactivate_key_table
+keybind = vim/q=deactivate_key_table
+keybind = vim/i=deactivate_key_table
+
+# Catch unbound keys
+keybind = vim/catch_all=ignore
+
+theme = TokyoNight
+
+background-opacity = 0.90
