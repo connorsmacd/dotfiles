@@ -1,6 +1,5 @@
 require 'options'
 
-require 'autocmds'
 require 'keymaps'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -16,29 +15,7 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
-require('lazy').setup({
-  require 'plugins.autopairs',
-  require 'plugins.blink',
-  require 'plugins.catppuccin',
-  require 'plugins.cmake-tools',
-  require 'plugins.conform',
-  require 'plugins.gitsigns',
-  require 'plugins.indent-blankline',
-  require 'plugins.lazydev',
-  require 'plugins.mini',
-  -- require 'plugins.neoscroll',
-  require 'plugins.nvim-lint',
-  require 'plugins.nvim-lspconfig',
-  require 'plugins.nvim-spectre',
-  require 'plugins.nvim-tree',
-  require 'plugins.nvim-treesitter',
-  require 'plugins.oxocarbon',
-  require 'plugins.sleuth',
-  require 'plugins.telescope',
-  require 'plugins.telescope-frecency',
-  require 'plugins.todo-comments',
-  require 'plugins.which-key',
-}, {
+require('lazy').setup('plugins', {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
@@ -58,5 +35,22 @@ require('lazy').setup({
   },
 })
 
-vim.opt.background = 'light'
-vim.cmd.colorscheme 'oxocarbon'
+require 'autocmds'
+
+vim.cmd.colorscheme 'tokyonight'
+
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldlevelstart = 99
+
+-- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+-- parser_config.c_with_bson_macros = {
+--   install_info = {
+--     url = '~/dev/tree-sitter-c-bson',
+--     files = {
+--       'src/parser.c',
+--     },
+--   },
+-- }
+
+-- vim.treesitter.language.register('c_with_bson_macros', 'c')

@@ -7,11 +7,6 @@ g.maplocalleader = ' '
 
 g.have_nerd_font = true
 
--- For nvim-tree
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
-opt.termguicolors = true
-
 o.number = true
 o.relativenumber = true
 
@@ -75,3 +70,10 @@ o.scrolloff = 10
 -- See `:help 'confirm'`
 o.confirm = true
 
+opt.termguicolors = true
+
+o.winborder = 'rounded'
+
+o.wrap = false
+
+vim.diagnostic.config { virtual_lines = true, virtual_text = true }

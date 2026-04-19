@@ -1,0 +1,36 @@
+local map = vim.keymap.set
+
+map('n', '<leader>F', function()
+  local Layout = require 'nui.layout'
+  local Input = require 'nui.input'
+
+  local find_input = Input({
+    size = 20,
+  }, {
+    prompt = 'Find:    ',
+    size = {},
+  })
+
+  local replace_input = Input({
+    size = 20,
+  }, {
+    prompt = 'Replace: ',
+  })
+
+  local layout = Layout(
+    {
+      anchor = 'NE',
+      position = '25%',
+      size = {
+        width = 40,
+        height = '20%',
+      },
+    },
+    Layout.Box({
+      Layout.Box(find_input, { size = '40%' }),
+      Layout.Box(replace_input, { size = '40%' }),
+    }, { dir = 'col' })
+  )
+
+  layout:mount()
+end, { desc = '[F]ind & [R]eplace' })

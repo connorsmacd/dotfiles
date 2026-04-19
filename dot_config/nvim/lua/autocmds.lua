@@ -10,13 +10,35 @@ autocmd('TextYankPost', {
   end,
 })
 
-autocmd({ 'InsertLeave', 'TextChanged' }, {
+autocmd({ 'BufWritePre' }, {
+  pattern = '*',
+  group = group('autoformat', { clear = true }),
+  desc = 'autoformat',
+  callback = function()
+    vim.notify('Formatting ' .. api.nvim_buf_get_name(0))
+    require('conform').format { lsp_format = 'fallback' }
+  end,
+})
+
+autocmd({ 'BufLeave', 'FocusLost' }, {
   pattern = '*',
   group = group('autosave', { clear = true }),
-  callback = function()
-    if #api.nvim_buf_get_name(0) ~= 0 and vim.bo.buflisted then
-      vim.cmd 'silent w'
-      vim.notify('Saved at ' .. os.date '%H:%M:%S')
+  desc = 'autosave',
+  callback = function(args)
+    local buf = args.buf
+    local buf_name = api.nvim_buf_get_name(buf)
+
+    if #buf_name ~= 0 and vim.bo.buflisted and vim.bo.modified then
+      if vim.api.nvim_win_get_config(0).relative ~= '' then
+        return
+      end
+
+      vim.schedule(function()
+        api.nvim_buf_call(buf, function()
+          vim.cmd 'silent w'
+          vim.notify('saved ' .. buf_name .. ' at ' .. os.date '%h:%m:%s')
+        end)
+      end)
     end
   end,
 })
@@ -39,6 +61,37 @@ autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
   callback = function()
     if vim.wo.number then
       vim.wo.relativenumber = false
+    end
+  end,
+})
+
+autocmd({ 'Colorscheme' }, {
+  group = group('set-background', { clear = true }),
+  desc = 'set background',
+  callback = function()
+    local hl_groups = {
+      'Normal',
+      'NormalFloat',
+      'NormalNC',
+      'NotifyERRORBody',
+      'NotifyWARNBody',
+      'NotifyINFOBody',
+      'NotifyDEBUGBody',
+      'NotifyTRACEBody',
+      'NotifyERRORBorder',
+      'NotifyWARNBorder',
+      'NotifyINFOBorder',
+      'NotifyDEBUGBorder',
+      'NotifyTRACEBorder',
+      'TelescopeBorder',
+      'TelescopeNormal',
+      'TelescopePromptBorder',
+      'WhichKeyNormal',
+      'ZenBg',
+    }
+
+    for _, g in ipairs(hl_groups) do
+      vim.cmd('highlight ' .. g .. ' guibg=NONE ctermbg=NONE')
     end
   end,
 })
