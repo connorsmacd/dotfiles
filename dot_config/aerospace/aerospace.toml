@@ -113,78 +113,66 @@ automatically-unhide-macos-hidden-apps = false
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
-    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-    alt-b = 'workspace B'
-    alt-c = 'workspace C'
-    alt-d = 'workspace D'
-    alt-e = 'workspace E'
-    alt-f = 'workspace F'
-    alt-g = 'workspace G'
-    alt-i = 'workspace I'
-    alt-m = 'workspace M'
-    alt-n = 'workspace N'
-    alt-o = 'workspace O'
-    alt-p = 'workspace P'
-    alt-q = 'workspace Q'
-    alt-r = 'workspace R'
-    alt-s = 'workspace S'
-    alt-t = 'workspace T'
-    alt-u = 'workspace U'
-    alt-v = 'workspace V'
-    alt-w = 'workspace W'
-    alt-x = 'workspace X'
-    alt-y = 'workspace Y'
-    alt-z = 'workspace Z'
+    # Main monitor
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
-    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
-    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
-    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
-    alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
-    alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
-    alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
-    alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
-    alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
-    alt-shift-a = 'move-node-to-workspace --focus-follows-window A'
-    alt-shift-b = 'move-node-to-workspace --focus-follows-window B'
-    alt-shift-c = 'move-node-to-workspace --focus-follows-window C'
-    alt-shift-d = 'move-node-to-workspace --focus-follows-window D'
-    alt-shift-e = 'move-node-to-workspace --focus-follows-window E'
-    alt-shift-f = 'move-node-to-workspace --focus-follows-window F'
-    alt-shift-g = 'move-node-to-workspace --focus-follows-window G'
-    alt-shift-i = 'move-node-to-workspace --focus-follows-window I'
-    alt-shift-m = 'move-node-to-workspace --focus-follows-window M'
-    alt-shift-n = 'move-node-to-workspace --focus-follows-window N'
-    alt-shift-o = 'move-node-to-workspace --focus-follows-window O'
-    alt-shift-p = 'move-node-to-workspace --focus-follows-window P'
-    alt-shift-q = 'move-node-to-workspace --focus-follows-window Q'
-    alt-shift-r = 'move-node-to-workspace --focus-follows-window R'
-    alt-shift-s = 'move-node-to-workspace --focus-follows-window S'
-    alt-shift-t = 'move-node-to-workspace --focus-follows-window T'
-    alt-shift-u = 'move-node-to-workspace --focus-follows-window U'
-    alt-shift-v = 'move-node-to-workspace --focus-follows-window V'
-    alt-shift-w = 'move-node-to-workspace --focus-follows-window W'
-    alt-shift-x = 'move-node-to-workspace --focus-follows-window X'
-    alt-shift-y = 'move-node-to-workspace --focus-follows-window Y'
-    alt-shift-z = 'move-node-to-workspace --focus-follows-window Z'
+    alt-f = 'workspace C-DRIVER'
+    alt-shift-f = 'move-node-to-workspace --focus-follows-window C-DRIVER'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
+    alt-d = 'workspace CXX-DRIVER'
+    alt-shift-d = 'move-node-to-workspace --focus-follows-window CXX-DRIVER'
+
+    alt-s = 'workspace CRYPT'
+    alt-shift-s = 'move-node-to-workspace --focus-follows-window CRYPT'
+
+    alt-a = 'workspace SPEC'
+    alt-shift-a = 'move-node-to-workspace --focus-follows-window SPEC'
+
+    alt-p = 'workspace CONFIG'
+    alt-shift-p = 'move-node-to-workspace --focus-follows-window CONFIG'
+
+    alt-m = 'workspace SANDBOX'
+    alt-shift-m = 'move-node-to-workspace --focus-follows-window SANDBOX'
+
+    alt-u = 'workspace BROWSER-MAIN'
+    alt-shift-u = 'move-node-to-workspace --focus-follows-window BROWSER-MAIN'
+
+    alt-y = 'workspace MISC-MAIN'
+    alt-shift-y = 'move-node-to-workspace --focus-follows-window MISC-MAIN'
+
+    # Top monitor
+
+    alt-r = 'workspace BROWSER-TOP'
+    alt-shift-r = 'move-node-to-workspace --focus-follows-window BROWSER-TOP'
+
+    alt-e = 'workspace EMAIL-SLACK'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window EMAIL-SLACK'
+
+    alt-w = 'workspace SCRATCH'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window SCRATCH'
+
+    alt-q = 'workspace CODE-TOP'
+    alt-shift-q = 'move-node-to-workspace --focus-follows-window CODE-TOP'
+
+    # Laptop Monitor
+
+    alt-v = 'workspace ZOOM'
+    alt-shift-v = 'move-node-to-workspace --focus-follows-window ZOOM'
+
+    alt-c = 'workspace MUSIC'
+    alt-shift-c = 'move-node-to-workspace --focus-follows-window MUSIC'
+
+    alt-x = 'workspace SCREENSHARE'
+    alt-shift-x = 'move-node-to-workspace --focus-follows-window SCREENSHARE'
+
+    # Zen
+
+    alt-z = ['workspace ZEN-TOP', 'workspace ZEN-LAPTOP', 'focus-monitor main']
+
+    # Other
+
     alt-tab = 'workspace-back-and-forth'
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
@@ -208,15 +196,22 @@ automatically-unhide-macos-hidden-apps = false
     shift-down = ['volume set 0', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-    1 = 'main'
-    2 = 'LG HDR WQHD'
-    3 = 'Built-in Retina Display'
-    4 = 'main'
-    5 = 'LG HDR WQHD'
-    6 = 'Built-in Retina Display'
-    7 = 'main'
-    8 = 'LG HDR WQHD'
-    9 = 'Built-in Retina Display'
-    a = 'Built-in Retina Display'
-    b = 'Built-in Retina Display'
-    c = 'Built-in Retina Display'
+    MISC-MAIN = 'main'
+    BROWSER-MAIN = 'main'
+    SPEC = 'main'
+    C-DRIVER = 'main'
+    CXX-DRIVER = 'main'
+    CRYPT = 'main'
+    CONFIG = 'main'
+    SANDBOX = 'main'
+
+    EMAIL-SLACK = 'lg'
+    BROWSER-TOP = 'lg'
+    SCRATCH = 'lg'
+    CODE-TOP = 'lg'
+    ZEN-TOP = 'lg'
+
+    ZOOM = 'built-in'
+    MUSIC = 'built-in'
+    SCREENSHARE = 'built-in'
+    ZEN-LAPTOP = 'built-in'
