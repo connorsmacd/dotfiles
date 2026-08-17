@@ -24,6 +24,21 @@ return {
       '<cmd>Yazi toggle<cr>',
       desc = '[Y]azi [T]oggle',
     },
+    {
+      '<leader>yc',
+      mode = { 'n', 'v' },
+      function()
+        require('yazi').yazi({
+          ---@diagnostic disable-next-line: missing-fields
+          hooks = {
+            on_yazi_ready = function(_, _, process_api)
+              process_api:emit_to_yazi { 'plugin', 'vcs-files' }
+            end,
+          },
+        }, vim.fn.getcwd())
+      end,
+      desc = '[Y]azi View [C]hanged Files',
+    },
   },
   opts = {},
 }

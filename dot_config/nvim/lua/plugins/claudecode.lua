@@ -1,6 +1,5 @@
 return {
-  'RasmusN/claudecode.nvim',
-  commit = 'b0f7520',
+  'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },
   opts = {
     diff_opts = {

@@ -32,9 +32,24 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      json = { 'clang-format' },
-      markdown = { 'prettier' },
+      json = { 'jq' },
       rust = { 'rustfmt', lsp_format = 'fallback' },
+      c = { 'clang_format' },
+      cpp = { 'clang_format' },
+    },
+    formatters = {
+      clang_format = {
+        -- Prefer the project-local clang-format installed via uv (.venv/bin/clang-format)
+        -- so the version matches what CI enforces via uv.lock.
+        command = function(_, ctx)
+          local found = vim.fs.find('.venv/bin/clang-format', {
+            upward = true,
+            path = vim.fs.dirname(ctx.filename),
+            type = 'file',
+          })
+          return found[1] or 'clang-format'
+        end,
+      },
     },
   },
 }

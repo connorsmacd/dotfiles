@@ -42,6 +42,9 @@ vim.cmd.colorscheme 'tokyonight'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldlevelstart = 99
+--
+-- Add to your init.lua to show [noeol] when applicable
+vim.opt.statusline:append '%{&eol ? "" : "[noeol] "}'
 
 -- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 -- parser_config.c_with_bson_macros = {

@@ -40,5 +40,6 @@ return {
     map('g', 'Generate')
     map('s', 'Settings')
     map('t', 'SelectBuildTarget', 'Select Build [T]arget')
+    map('p', 'SelectConfigurePreset', 'Select Configure [P]reset')
   end,
 }

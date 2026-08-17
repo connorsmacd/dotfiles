@@ -15,18 +15,33 @@ return {
     local dap = require 'dap'
 
     vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[D]ebugger Toggle [B]reakpoint' })
+
     vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[D]ebugger [C]ontinue' })
+    vim.keymap.set('n', '<F2>', dap.continue, { desc = '[D]ebugger [C]ontinue' })
+
     vim.keymap.set('n', '<leader>dr', dap.run_to_cursor, { desc = '[D]ebugger [R]un to Cursor' })
+
     vim.keymap.set('n', '<leader>ds', dap.step_over, { desc = '[D]ebugger [S]tep Over' })
+    vim.keymap.set('n', '<F5>', dap.step_over, { desc = '[D]ebugger [S]tep Over' })
+
     vim.keymap.set('n', '<leader>di', dap.step_into, { desc = '[D]ebugger Step [I]nto' })
+    vim.keymap.set('n', '<F6>', dap.step_into, { desc = '[D]ebugger Step [I]nto' })
+
     vim.keymap.set('n', '<leader>do', dap.step_out, { desc = '[D]ebugger Step [O]ut' })
+    vim.keymap.set('n', '<F4>', dap.step_out, { desc = '[D]ebugger Step [O]ut' })
+
     vim.keymap.set('n', '<leader>dR', dap.restart, { desc = '[D]ebugger [R]estart' })
     vim.keymap.set('n', '<leader>dC', dap.close, { desc = '[D]ebugger [C]lose' })
     vim.keymap.set('n', '<leader>de', function()
       require('dap').set_exception_breakpoints { 'uncaughted' }
     end, { desc = '[D]ebugger Break on Uncaught [E]xceptions' })
+
     vim.keymap.set('n', '<leader>dj', dap.down, { desc = '[D]ebugger Down' })
+    vim.keymap.set('n', '<Down>', dap.down, { desc = '[D]ebugger Down' })
+
     vim.keymap.set('n', '<leader>dk', dap.up, { desc = '[D]ebugger Up' })
+    vim.keymap.set('n', '<Up>', dap.up, { desc = '[D]ebugger Up' })
+
     vim.keymap.set('n', '<leader>dp', dap.pause, { desc = '[D]ebugger [P]ause' })
 
     dap.configurations = {

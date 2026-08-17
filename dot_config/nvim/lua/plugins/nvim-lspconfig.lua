@@ -123,6 +123,19 @@ return {
         --
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+        -- clangd only supports file:// URIs; detach from octo://, fugitive://, diffview://, etc.
+        -- to stop documentHighlight errors spamming on every cursor move.
+        if client and client.name == 'clangd' then
+          local bufname = vim.api.nvim_buf_get_name(event.buf)
+          if bufname:match('^%w+://') and not bufname:match('^file://') then
+            vim.schedule(function()
+              vim.lsp.buf_detach_client(event.buf, client.id)
+            end)
+            return
+          end
+        end
+
         if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
           local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {

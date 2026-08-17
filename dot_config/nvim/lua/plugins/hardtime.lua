@@ -8,10 +8,10 @@ return {
   opts = {
     disable_mouse = false,
     disabled_keys = {
-      ['<Up>'] = { 'n', 'x' },
-      ['<Down>'] = { 'n', 'x' },
-      ['<Left>'] = { 'n', 'x' },
-      ['<Right>'] = { 'n', 'x' },
+      ['<Up>'] = false,
+      ['<Down>'] = false,
+      ['<Left>'] = false,
+      ['<Right>'] = false,
     },
   },
 }
