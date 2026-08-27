@@ -25,9 +25,15 @@ local ts = require 'nvim-treesitter'
 -- Default install_dir is `stdpath('data')/site`, which is what we want.
 ts.setup {}
 
+-- Extra language aliases. Injected languages (markdown code fence info strings, for instance) are
+-- resolved with `vim.treesitter.language.get_lang()`, which only knows the canonical names plus
+-- whatever is registered here, so ```rs fences go unhighlighted without this.
+vim.treesitter.language.register('rust', 'rs')
+
 local ensure_installed = {
   'bash',
   'c',
+  'cmake',
   'cpp',
   'diff',
   'html',
