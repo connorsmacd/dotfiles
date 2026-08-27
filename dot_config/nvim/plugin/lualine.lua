@@ -14,11 +14,4 @@ require('lualine').setup {
   options = {
     theme = 'tokyonight',
   },
-  sections = {
-    lualine_z = {
-      {
-        require('opencode').statusline,
-      },
-    },
-  },
 }
